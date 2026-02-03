@@ -164,4 +164,4 @@ The copy focuses on:
 
 **Inspired by:** Clean, minimalist design principles from companies like Lemonade, Stripe, and Linear.
 
-**Built for:** Small business owners who need custom apps without the enterprise price tag.
+**Built for:** Small business owners who need custom apps without the enterprise price tag. 
