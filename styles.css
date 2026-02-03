@@ -262,7 +262,7 @@ h1, h2, h3, h4, h5, h6 {
    Hero Section
    =================================== */
 .hero {
-    padding: 6rem 2rem 3rem;
+    padding: 5rem 2rem 2.5rem;
     background: linear-gradient(to bottom, var(--bg-secondary), var(--bg-primary));
     position: relative;
     overflow: hidden;
@@ -340,7 +340,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: clamp(1.125rem, 2vw, 1.375rem);
     color: var(--text-secondary);
     max-width: 750px;
-    margin: 0 auto 2.5rem;
+    margin: 0 auto 2rem;
     line-height: 1.7;
 }
 
@@ -349,7 +349,7 @@ h1, h2, h3, h4, h5, h6 {
     gap: 1rem;
     justify-content: center;
     flex-wrap: wrap;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 .hero-highlight {
@@ -392,7 +392,7 @@ h1, h2, h3, h4, h5, h6 {
 .hero-stats {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 2rem;
+    gap: 1.5rem;
     max-width: 700px;
     margin: 0 auto;
 }
@@ -424,7 +424,7 @@ h1, h2, h3, h4, h5, h6 {
    Section Layouts
    =================================== */
 .section {
-    padding: 3rem 2rem;
+    padding: 2.25rem 2rem;
 }
 
 .section-alt {
@@ -443,12 +443,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .section-header {
     text-align: center;
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.75rem;
 }
 
 .section-title {
     font-size: clamp(2rem, 4vw, 3rem);
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
     color: var(--text-primary);
 }
 
@@ -465,15 +465,15 @@ h1, h2, h3, h4, h5, h6 {
 .impact-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 2rem;
-    margin-bottom: 2.5rem;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 .impact-card {
     background: white;
     border: 1px solid var(--border);
     border-radius: var(--radius-xl);
-    padding: 2rem;
+    padding: 1.5rem;
     text-align: left;
     box-shadow: var(--shadow-sm);
     transition: all var(--transition-base);
@@ -486,7 +486,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .impact-number {
-    font-size: 3rem;
+    font-size: 2.75rem;
     font-weight: 800;
     line-height: 1.1;
     background: linear-gradient(135deg, var(--primary), var(--secondary));
@@ -515,10 +515,21 @@ h1, h2, h3, h4, h5, h6 {
     margin-left: 2px;
 }
 
+.impact-desc sup a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.impact-desc sup a:hover {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
 .impact-callout {
     max-width: 900px;
-    margin: 0 auto 2.5rem;
-    padding: 1.5rem 2rem;
+    margin: 0 auto 2rem;
+    padding: 1.25rem 1.5rem;
     border-radius: var(--radius-xl);
     background: linear-gradient(135deg, rgba(74, 88, 153, 0.06), rgba(107, 122, 199, 0.06));
     border: 1px solid var(--primary-light);
@@ -536,42 +547,11 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }
 
-.sources {
-    text-align: center;
-    font-size: 0.8125rem;
-    color: var(--text-tertiary);
-    margin-bottom: 2.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-}
-
-.sources-title {
-    font-weight: 600;
-    color: var(--text-secondary);
-}
-
-.sources a {
-    color: var(--text-tertiary);
-    text-decoration: underline;
-    text-underline-offset: 2px;
-}
-
-.source-short {
-    display: none;
-}
-
-.source-long {
-    display: inline;
-}
-
 .section-divider {
     height: 1px;
     background: var(--border);
     max-width: 900px;
-    margin: 2.5rem auto;
+    margin: 2rem auto;
 }
 
 .section-header-compact {
@@ -581,11 +561,11 @@ h1, h2, h3, h4, h5, h6 {
 .features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
 .feature-card {
-    padding: 1.5rem;
+    padding: 1.25rem;
     background: white;
     border: 1px solid var(--border);
     border-radius: var(--radius-xl);
@@ -628,7 +608,7 @@ h1, h2, h3, h4, h5, h6 {
 .steps {
     display: grid;
     grid-template-columns: 1fr auto 1fr auto 1fr;
-    gap: 2rem;
+    gap: 1.25rem;
     align-items: center;
     max-width: 1100px;
     margin: 0 auto;
@@ -638,12 +618,12 @@ h1, h2, h3, h4, h5, h6 {
     background: white;
     border: 1px solid var(--border);
     border-radius: var(--radius-2xl);
-    padding: 2.5rem;
+    padding: 1.25rem;
     position: relative;
     transition: all var(--transition-base);
     display: flex;
     flex-direction: column;
-    height: 500px;
+    height: 320px;
 }
 
 .step:hover {
@@ -655,14 +635,14 @@ h1, h2, h3, h4, h5, h6 {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 60px;
-    height: 60px;
+    width: 46px;
+    height: 46px;
     background: linear-gradient(135deg, var(--primary), var(--secondary));
     color: white;
-    font-size: 1.75rem;
+    font-size: 1.35rem;
     font-weight: 800;
     border-radius: var(--radius-full);
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.75rem;
     box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4);
 }
 
@@ -673,27 +653,28 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .step-title {
-    font-size: 1.375rem;
-    margin-bottom: 0.75rem;
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
 }
 
 .step-description {
     color: var(--text-secondary);
-    line-height: 1.7;
-    margin-bottom: 1rem;
+    line-height: 1.55;
+    margin-bottom: 0.75rem;
+    font-size: 0.9375rem;
 }
 
 .step-time {
     display: block;
-    padding: 0.5rem 0.75rem;
+    padding: 0.35rem 0.5rem;
     background: var(--gray-100);
     border-radius: var(--radius-md);
-    font-size: 0.875rem;
+    font-size: 0.75rem;
     font-weight: 500;
     color: var(--text-secondary);
     margin-bottom: 0.5rem;
     margin-top: auto;
-    min-height: 36px;
+    min-height: 28px;
     display: flex;
     align-items: center;
 }
@@ -733,7 +714,7 @@ h1, h2, h3, h4, h5, h6 {
    Integrations Section
    =================================== */
 .integrations-section {
-    padding: 3rem 2rem;
+    padding: 2.25rem 2rem;
     background: white;
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
@@ -747,13 +728,13 @@ h1, h2, h3, h4, h5, h6 {
 .integration-categories {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-bottom: 3rem;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 .integration-item {
     text-align: center;
-    padding: 2rem;
+    padding: 1.5rem;
     background: var(--bg-secondary);
     border-radius: var(--radius-xl);
     transition: all var(--transition-base);
@@ -805,7 +786,7 @@ h1, h2, h3, h4, h5, h6 {
 .integration-callout {
     max-width: 800px;
     margin: 0 auto;
-    padding: 1.75rem;
+    padding: 1.5rem;
     background: linear-gradient(135deg, rgba(74, 88, 153, 0.05), rgba(107, 122, 199, 0.05));
     border: 2px solid var(--primary-light);
     border-radius: var(--radius-xl);
@@ -840,14 +821,14 @@ h1, h2, h3, h4, h5, h6 {
    Trust Section
    =================================== */
 .trust-section {
-    padding: 3rem 2rem;
+    padding: 2.25rem 2rem;
     background: white;
 }
 
 .trust-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    gap: 3rem;
     align-items: center;
 }
 
@@ -908,15 +889,15 @@ h1, h2, h3, h4, h5, h6 {
 .pricing-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
+    gap: 1.5rem;
+    margin-top: 2rem;
 }
 
 .pricing-card {
     background: white;
     border: 2px solid var(--border);
     border-radius: var(--radius-2xl);
-    padding: 2.5rem;
+    padding: 1.5rem;
     position: relative;
     transition: all var(--transition-base);
     display: flex;
@@ -952,7 +933,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .pricing-header {
-    margin-bottom: 2rem;
+    margin-bottom: 1.25rem;
     min-height: 80px;
     display: flex;
     flex-direction: column;
@@ -960,7 +941,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .pricing-name {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     margin-bottom: 0.5rem;
 }
 
@@ -971,13 +952,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .pricing-price {
-    margin-bottom: 2rem;
-    padding-bottom: 2rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 1.25rem;
     border-bottom: 2px solid var(--border);
 }
 
 .price-amount {
-    font-size: 3.5rem;
+    font-size: 3rem;
     font-weight: 800;
     background: linear-gradient(135deg, var(--primary), var(--secondary));
     -webkit-background-clip: text;
@@ -993,14 +974,14 @@ h1, h2, h3, h4, h5, h6 {
 
 .pricing-features {
     list-style: none;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     flex-grow: 1;
 }
 
 .pricing-features li {
-    padding: 0.75rem 0;
+    padding: 0.5rem 0;
     color: var(--text-secondary);
-    font-size: 0.9375rem;
+    font-size: 0.875rem;
     display: flex;
     align-items: flex-start;
     gap: 0.75rem;
@@ -1008,8 +989,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .pricing-footer {
     text-align: center;
-    margin-top: 3rem;
-    padding: 2rem;
+    margin-top: 2rem;
+    padding: 1.5rem;
     background: var(--gray-100);
     border-radius: var(--radius-xl);
 }
@@ -1022,8 +1003,8 @@ h1, h2, h3, h4, h5, h6 {
 /* Why Free Box */
 .why-free-box {
     max-width: 900px;
-    margin: 3rem auto 0;
-    padding: 2.5rem;
+    margin: 2rem auto 0;
+    padding: 2rem;
     background: linear-gradient(135deg, rgba(74, 88, 153, 0.05), rgba(107, 122, 199, 0.05));
     border: 2px solid var(--primary-light);
     border-radius: var(--radius-2xl);
@@ -1079,7 +1060,7 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1.5rem 2rem;
+    padding: 1.25rem 1.5rem;
     background: none;
     border: none;
     text-align: left;
@@ -1115,7 +1096,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .faq-answer p {
-    padding: 0 2rem 1.5rem;
+    padding: 0 1.5rem 1.25rem;
     color: var(--text-secondary);
     line-height: 1.7;
 }
@@ -1124,7 +1105,7 @@ h1, h2, h3, h4, h5, h6 {
    CTA Section
    =================================== */
 .cta-section {
-    padding: 3rem 2rem;
+    padding: 2.5rem 2rem;
     background: linear-gradient(135deg, var(--primary), var(--secondary));
     position: relative;
     overflow: hidden;
@@ -1161,7 +1142,7 @@ h1, h2, h3, h4, h5, h6 {
 .cta-subtitle {
     font-size: 1.25rem;
     color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
 }
 
 .cta-buttons {
@@ -1169,7 +1150,7 @@ h1, h2, h3, h4, h5, h6 {
     gap: 1rem;
     justify-content: center;
     flex-wrap: wrap;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 .cta-features {
@@ -1196,7 +1177,7 @@ h1, h2, h3, h4, h5, h6 {
    Footer
    =================================== */
 .footer {
-    padding: 2rem 2rem 1rem;
+    padding: 1.75rem 2rem 1rem;
     background: var(--gray-900);
     color: var(--gray-400);
 }
@@ -1204,8 +1185,8 @@ h1, h2, h3, h4, h5, h6 {
 .footer-grid {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr;
-    gap: 3rem;
-    margin-bottom: 3rem;
+    gap: 2.5rem;
+    margin-bottom: 2.5rem;
 }
 
 .footer-logo {
@@ -1323,7 +1304,7 @@ h1, h2, h3, h4, h5, h6 {
     overflow-y: auto;
     background: white;
     border-radius: var(--radius-2xl);
-    padding: 3rem;
+    padding: 2.5rem;
     box-shadow: var(--shadow-2xl);
     animation: slideUp var(--transition-slow);
     z-index: 1;
@@ -1462,7 +1443,11 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 1024px) {
     .steps {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 1.25rem;
+    }
+    
+    .step {
+        height: auto;
     }
     
     .step-connector {
@@ -1471,7 +1456,7 @@ h1, h2, h3, h4, h5, h6 {
     
     .trust-content {
         grid-template-columns: 1fr;
-        gap: 3rem;
+        gap: 2.5rem;
     }
     
     .footer-grid {
@@ -1485,7 +1470,7 @@ h1, h2, h3, h4, h5, h6 {
     }
     
     .hero {
-        padding: 5rem 1.5rem 2.5rem;
+        padding: 4.5rem 1.5rem 2rem;
     }
     
     .hero-highlight {
@@ -1498,7 +1483,7 @@ h1, h2, h3, h4, h5, h6 {
     }
     
     .section {
-        padding: 2.5rem 1.5rem;
+        padding: 2rem 1.5rem;
     }
     
     .features-grid {
@@ -1515,7 +1500,7 @@ h1, h2, h3, h4, h5, h6 {
     }
     
     .integrations-section {
-        padding: 2.5rem 1.5rem;
+        padding: 2rem 1.5rem;
     }
     
     .integration-categories {
@@ -1524,7 +1509,7 @@ h1, h2, h3, h4, h5, h6 {
     }
     
     .integration-item {
-        padding: 1.5rem;
+        padding: 1.25rem;
     }
     
     .pricing-grid {
@@ -1532,7 +1517,7 @@ h1, h2, h3, h4, h5, h6 {
     }
     
     .trust-section {
-        padding: 2.5rem 1.5rem;
+        padding: 2rem 1.5rem;
     }
     
     .footer-grid {
@@ -1551,7 +1536,7 @@ h1, h2, h3, h4, h5, h6 {
     }
     
     .modal-content {
-        padding: 2rem;
+        padding: 1.75rem;
     }
     
     .cta-features {
@@ -1562,7 +1547,7 @@ h1, h2, h3, h4, h5, h6 {
     .integration-callout {
         flex-direction: column;
         text-align: center;
-        padding: 2rem;
+        padding: 1.5rem;
     }
 }
 
@@ -1597,25 +1582,3 @@ h1, h2, h3, h4, h5, h6 {
     white-space: nowrap;
     border-width: 0;
 }
-    .sources {
-        flex-direction: column;
-        align-items: flex-start;
-        text-align: left;
-        gap: 0.25rem;
-    }
-
-    .source-sep {
-        display: none;
-    }
-
-    .sources a {
-        padding: 0.25rem 0;
-    }
-
-    .source-short {
-        display: inline;
-    }
-
-    .source-long {
-        display: none;
-    }
