@@ -592,8 +592,7 @@
             <button class="modal-close" onclick="closeModal('demo')" aria-label="Close">×</button>
             <h2 class="modal-title">Let’s Connect</h2>
             <p class="modal-subtitle">Share a few details and we’ll reach out personally to map next steps.</p>
-            <form class="modal-form" action="https://formspree.io/f/mgolwwen" method="POST">
-                <input type="hidden" name="_next" value="https://kodabuild.com/?submitted=1">
+            <form class="modal-form" action="https://formspree.io/f/mgolwwen" method="POST" onsubmit="handleSubmit(event, 'demo')">
                 <input type="hidden" name="_subject" value="New Koda Build Lead">
                 <div class="form-row">
                     <div class="form-group">
