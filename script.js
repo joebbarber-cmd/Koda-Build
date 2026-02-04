@@ -73,8 +73,8 @@ function handleSubmit(event, type) {
     
     // Show success notification
     const message = type === 'trial' 
-        ? "🎉 Thank you! We'll contact you within 24 hours to start your free trial."
-        : "📅 Thank you! We'll reach out soon to schedule your demo.";
+        ? "🎉 Congrats—you're in! We’re excited to shape an amazing app with you."
+        : "🎉 Congrats! We’re excited to shape an amazing app with you.";
     
     showNotification(message, 'success');
     
@@ -85,123 +85,48 @@ function handleSubmit(event, type) {
 
 // Notification System
 function showNotification(message, type = 'success') {
-    // Remove existing notifications
-    const existing = document.querySelectorAll('.notification');
-    existing.forEach(notif => notif.remove());
-    
-    // Create notification element
-    const notification = document.createElement('div');
-    notification.className = `notification notification-${type}`;
-    notification.innerHTML = `
-        <div class="notification-content">
-            <span class="notification-message">${message}</span>
-            <button class="notification-close" onclick="this.parentElement.parentElement.remove()">×</button>
+    // Remove existing confirmation modals
+    const existing = document.querySelectorAll('.confirmation-modal');
+    existing.forEach(modal => modal.remove());
+
+    const modal = document.createElement('div');
+    modal.className = 'modal show confirmation-modal';
+    modal.style.display = 'flex';
+    const nextSteps = type === 'trial'
+        ? `
+            <ul class="confirmation-steps">
+                <li>We’ll review your details and outline a quick plan.</li>
+                <li>We’ll reach out within 24 hours by email or phone.</li>
+                <li>We’ll map the build and get your app moving fast.</li>
+            </ul>
+        `
+        : `
+            <ul class="confirmation-steps">
+                <li>We’ll review your details and prep next steps.</li>
+                <li>We’ll reach out directly by email or phone.</li>
+                <li>We’ll map a clear path to your launch‑ready app.</li>
+            </ul>
+        `;
+
+    modal.innerHTML = `
+        <div class="modal-overlay" data-confirm-close="true"></div>
+        <div class="modal-content confirmation-content">
+            <button class="modal-close" data-confirm-close="true" aria-label="Close">×</button>
+            <div class="confirmation-icon" aria-hidden="true">✓</div>
+            <h2 class="modal-title">You’re all set</h2>
+            <p class="modal-subtitle">${message}</p>
+            ${nextSteps}
+            <button class="btn btn-primary btn-full" data-confirm-close="true">Amazing!</button>
         </div>
     `;
-    
-    // Add styles
-    const styles = `
-        .notification {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            z-index: 10000;
-            min-width: 320px;
-            max-width: 500px;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            animation: slideInRight 0.3s ease;
-            border-left: 4px solid #6366f1;
+
+    modal.addEventListener('click', (e) => {
+        if (e.target && e.target.dataset && e.target.dataset.confirmClose) {
+            modal.remove();
         }
-        
-        .notification-success {
-            border-left-color: #10b981;
-        }
-        
-        .notification-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 1.25rem 1.5rem;
-            gap: 1rem;
-        }
-        
-        .notification-message {
-            color: #1f2937;
-            font-size: 0.9375rem;
-            line-height: 1.5;
-        }
-        
-        .notification-close {
-            flex-shrink: 0;
-            width: 28px;
-            height: 28px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #f3f4f6;
-            border: none;
-            border-radius: 6px;
-            font-size: 1.25rem;
-            color: #6b7280;
-            cursor: pointer;
-            transition: all 0.15s;
-        }
-        
-        .notification-close:hover {
-            background: #e5e7eb;
-            color: #374151;
-        }
-        
-        @keyframes slideInRight {
-            from {
-                transform: translateX(400px);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-        
-        @keyframes slideOutRight {
-            from {
-                transform: translateX(0);
-                opacity: 1;
-            }
-            to {
-                transform: translateX(400px);
-                opacity: 0;
-            }
-        }
-        
-        @media (max-width: 640px) {
-            .notification {
-                bottom: 1rem;
-                right: 1rem;
-                left: 1rem;
-                min-width: auto;
-            }
-        }
-    `;
-    
-    // Inject styles if not already present
-    if (!document.querySelector('#notification-styles')) {
-        const styleSheet = document.createElement('style');
-        styleSheet.id = 'notification-styles';
-        styleSheet.textContent = styles;
-        document.head.appendChild(styleSheet);
-    }
-    
-    // Add to page
-    document.body.appendChild(notification);
-    
-    // Auto-remove after 5 seconds
-    setTimeout(() => {
-        notification.style.animation = 'slideOutRight 0.3s ease';
-        setTimeout(() => notification.remove(), 300);
-    }, 5000);
+    });
+
+    document.body.appendChild(modal);
 }
 
 // Smooth scroll for navigation links

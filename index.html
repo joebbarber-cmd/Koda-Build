@@ -15,13 +15,14 @@
     <nav class="nav">
         <div class="nav-container">
             <a href="#" class="logo">
-                <img src="Logo.png" alt="Koda Build" class="logo-img">
+                <img src="Logo Main.png" alt="Koda Build" class="logo-img">
             </a>
             <div class="nav-menu">
-                <a href="#features" class="nav-link">Features</a>
+                <a href="#features" class="nav-link">Why It Works</a>
+                <a href="#integrations" class="nav-link">Integrations</a>
                 <a href="#pricing" class="nav-link">Pricing</a>
-                <a href="#how-it-works" class="nav-link">How it Works</a>
-                <a href="#faq" class="nav-link">FAQ</a>
+                <a href="#how-it-works" class="nav-link">How We Build</a>
+                <a href="#faq" class="nav-link">Questions</a>
             </div>
             <button class="btn btn-primary" onclick="openModal('demo')">Get Started</button>
         </div>
@@ -32,43 +33,22 @@
         <div class="hero-container">
             <div class="hero-badge">
                 <span class="badge-dot"></span>
-                Free build + 60-day test drive
+                Free build + 30-day test drive, then $149+/month. No contracts.
             </div>
             <h1 class="hero-title">
                 Custom Apps That Grow Revenue<br>
                 <span class="gradient-text">Built Free, Risk-Free</span>
             </h1>
             <p class="hero-subtitle">
-                We design and launch your branded app in weeks. Test it for 60 days. Only pay if it drives results, from $149/month.
+                We design and launch your app in weeks—100% your branding, none of ours. Test it for 30 days. Only pay if it drives results, from $149/month.
             </p>
             <div class="hero-cta">
-                <button class="btn btn-large btn-primary" onclick="openModal('trial')">
+                <button class="btn btn-large btn-primary" onclick="openModal('demo')">
                     Get Your Free App Built
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </button>
-                <button class="btn btn-large btn-secondary" onclick="openModal('demo')">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M10 18C14.4183 18 18 14.4183 18 10C18 5.58172 14.4183 2 10 2C5.58172 2 2 5.58172 2 10C2 14.4183 5.58172 18 10 18Z" stroke="currentColor" stroke-width="2"/>
-                        <path d="M8 7L13 10L8 13V7Z" fill="currentColor"/>
-                    </svg>
-                    See How It Works
-                </button>
-            </div>
-            <div class="hero-stats">
-                <div class="stat">
-                    <div class="stat-value">$0</div>
-                    <div class="stat-label">Development cost</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-value">60 days</div>
-                    <div class="stat-label">Test drive</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-value">From $149</div>
-                    <div class="stat-label">Monthly after trial</div>
-                </div>
             </div>
         </div>
     </section>
@@ -112,8 +92,8 @@
             <div class="section-divider"></div>
 
             <div class="section-header section-header-compact">
-                <h2 class="section-title">What Your App Includes</h2>
-                <p class="section-subtitle">Built around your workflows so customers can buy, book, and return in seconds.</p>
+                <h2 class="section-title">What Your App Can Include</h2>
+                <p class="section-subtitle">Pick the features that fit your workflow — every build is tailored, so not every app uses every module.</p>
             </div>
 
             <div class="features-grid">
@@ -147,7 +127,7 @@
                         </svg>
                     </div>
                     <h3 class="feature-title">Smart Reminders</h3>
-                    <p class="feature-description">Push + SMS for promos, reminders, and updates without the email clutter.</p>
+                    <p class="feature-description">Push notifications for promos, reminders, and updates without the email clutter.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
@@ -178,12 +158,31 @@
                     <h3 class="feature-title">Home-Screen Presence</h3>
                     <p class="feature-description">Your brand stays one tap away when customers are ready to buy again.</p>
                 </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 5C3 3.89543 3.89543 3 5 3H19C20.1046 3 21 3.89543 21 5V15C21 16.1046 20.1046 17 19 17H8L4 21V5Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">In-App Support</h3>
+                    <p class="feature-description">Let customers get help fast with FAQs, chat, or service requests.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L3 6V12C3 16.4183 6.13401 20.3358 12 22C17.866 20.3358 21 16.4183 21 12V6L12 2Z" stroke="currentColor" stroke-width="2"/>
+                            <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Memberships & Subscriptions</h3>
+                    <p class="feature-description">Offer recurring plans, member perks, and gated content.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Integrations Section -->
-    <section class="integrations-section">
+    <section id="integrations" class="integrations-section">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">No New Workflows Required</h2>
@@ -282,8 +281,8 @@
                     <div class="step-number">03</div>
                     <div class="step-content">
                         <h3 class="step-title">Test Free, Then Decide</h3>
-                        <p class="step-description">Use it free for 60 days. Keep it only if it works, from $149/month.</p>
-                        <div class="step-time">⏱️ 60-day trial</div>
+                        <p class="step-description">Use it free for 30 days. Keep it only if it works, from $149/month.</p>
+                        <div class="step-time">⏱️ 30-day trial</div>
                     </div>
                 </div>
             </div>
@@ -295,7 +294,7 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Simple, Transparent Pricing</h2>
-                <p class="section-subtitle">No development fees. No setup costs. Just a low monthly subscription—and only if you keep the app after your free trial.</p>
+                <p class="section-subtitle">No development fees. No setup costs. Just a low monthly subscription—and only if you keep the app after your 30-day trial.</p>
             </div>
             <div class="pricing-grid">
                 <div class="pricing-card">
@@ -315,7 +314,9 @@
                         <li>✓ Smart automated notifications</li>
                         <li>✓ Up to 1 API integration</li>
                         <li>✓ Self-service content dashboard</li>
-                        <li>✓ Email support</li>
+                        <li>✓ App roadmap planning</li>
+                        <li>✓ Release & update management</li>
+                        <li>✓ QA testing before launch</li>
                     </ul>
                     <button class="btn btn-outline" onclick="openModal('trial')">Get Started</button>
                 </div>
@@ -337,7 +338,9 @@
                         <li>✓ Advanced automations</li>
                         <li>✓ Smart automated notifications</li>
                         <li>✓ Up to 3 API integrations</li>
-                        <li>✓ Priority support</li>
+                        <li>✓ App roadmap planning</li>
+                        <li>✓ Release & update management</li>
+                        <li>✓ QA testing before launch</li>
                         <li>✓ Custom analytics</li>
                     </ul>
                     <button class="btn btn-primary" onclick="openModal('trial')">Get Started</button>
@@ -349,8 +352,8 @@
                     <p class="pricing-desc">For established businesses at scale</p>
                     </div>
                     <div class="pricing-price">
-                        <span class="price-amount">$349+</span>
-                        <span class="price-period">/month</span>
+                        <span class="price-amount">Custom</span>
+                        <span class="price-period">quote</span>
                     </div>
                     <ul class="pricing-features">
                         <li>✓ Unlimited custom interfaces</li>
@@ -364,11 +367,11 @@
                         <li>✓ SLA guarantees</li>
                         <li>✓ White-label option</li>
                     </ul>
-                    <button class="btn btn-outline" onclick="openModal('demo')">Contact Sales</button>
+                    <button class="btn btn-outline" onclick="openModal('demo')">Get a Quote</button>
                 </div>
             </div>
             <div class="pricing-footer">
-                <p>💡 <strong>Remember:</strong> We build your app for FREE (normally $10k-50k). Pay only if you keep it after the 60-day trial.</p>
+                <p>💡 <strong>Remember:</strong> You don’t pay for the build. If you keep the app after the 30-day trial, pricing starts at $149/month.</p>
             </div>
 
             <!-- Why Free Explainer -->
@@ -396,7 +399,7 @@
                         </svg>
                     </button>
                 <div class="faq-answer">
-                        <p>Correct. Zero development fees. Apps that cost $10,000-$50,000+ elsewhere are free here. Test for 60 days, then pay only if you keep it ($149-$349/month).</p>
+                        <p>Correct. Zero development fees. Apps that cost $10,000-$50,000+ elsewhere are free here. Test for 30 days, then pay only if you keep it (plans start at $149/month; enterprise is custom).</p>
                 </div>
             </div>
 
@@ -420,7 +423,7 @@
                         </svg>
                     </button>
                 <div class="faq-answer">
-                        <p>If your app pulls data from an API, updates are <strong>automatic and included</strong>. For manual changes (images, text, layouts), Starter is $150/hour. Professional includes 1 hour/month, then $125/hour. Enterprise includes 3 hours/month, then $100/hour. We can also add a self-service dashboard.</p>
+                        <p>If your app pulls data from an API, updates are <strong>automatic and included</strong>. For manual changes (images, text, layouts), we bill a competitive hourly rate.</p>
                 </div>
             </div>
 
@@ -456,7 +459,7 @@
                         </svg>
                     </button>
                     <div class="faq-answer">
-                        <p><strong>Everything they're used to.</strong> We include: Apple Pay & Google Pay payments, push notifications, SMS messaging, calendar integration, photo galleries, Google Maps location integration, social media sharing (Instagram/Facebook), reviews & ratings, and more. Your customers get the smooth, modern experience they expect.</p>
+                        <p><strong>Everything they're used to.</strong> We include: Apple Pay & Google Pay payments, push notifications, calendar integration, photo galleries, Google Maps location integration, social media sharing (Instagram/Facebook), reviews & ratings, and more. Your customers get the smooth, modern experience they expect.</p>
                     </div>
                 </div>
 
@@ -504,9 +507,9 @@
         <div class="container">
             <div class="cta-content">
                 <h2 class="cta-title">Get Your Custom App Built—Free</h2>
-                <p class="cta-subtitle">Save $10,000+ in development costs. Test for 60 days. Pay only if you keep it.</p>
+            <p class="cta-subtitle">Save tens of thousands in development costs. Test for 30 days. You don’t pay for the build—only a monthly lease if you keep it.</p>
                 <div class="cta-buttons">
-                    <button class="btn btn-large btn-white" onclick="openModal('trial')">Start Free Build</button>
+                    <button class="btn btn-large btn-white" onclick="openModal('demo')">Start Free Build</button>
                     <button class="btn btn-large btn-ghost" onclick="openModal('demo')">Schedule a Call</button>
                 </div>
                 <div class="cta-features">
@@ -526,7 +529,7 @@
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M16.666 5L7.49935 14.1667L3.33268 10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                        <span>60-day free trial</span>
+                        <span>30-day free trial</span>
                     </div>
                 </div>
             </div>
@@ -538,40 +541,14 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <div class="footer-logo">
-                        <img src="Logo.png" alt="Koda Build" class="logo-img">
-                    </div>
-                    <p class="footer-tagline">Custom apps built for your business. No compromise.</p>
+                <div class="footer-logo">
+                    <img src="Logo White.png" alt="Koda Build" class="logo-img">
                 </div>
-            <div class="footer-col">
-                    <h4 class="footer-title">Product</h4>
-                    <a href="#features">Features</a>
-                <a href="#pricing">Pricing</a>
-                    <a href="#how-it-works">How it Works</a>
-                    <a href="#">Case Studies</a>
-            </div>
-            <div class="footer-col">
-                    <h4 class="footer-title">Company</h4>
-                    <a href="#">About Us</a>
-                <a href="#">Blog</a>
-                <a href="#">Careers</a>
-                <a href="#">Contact</a>
-            </div>
-            <div class="footer-col">
-                    <h4 class="footer-title">Legal</h4>
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-                <a href="#">Security</a>
-                    <a href="#">GDPR</a>
+                    <p class="footer-tagline">Custom apps built for your business. No compromise.</p>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2026 Koda Build. All rights reserved.</p>
-                <div class="footer-social">
-                    <a href="#" aria-label="Twitter">𝕏</a>
-                    <a href="#" aria-label="LinkedIn">in</a>
-                    <a href="#" aria-label="GitHub">⚡</a>
-                </div>
             </div>
         </div>
     </footer>
@@ -582,7 +559,7 @@
         <div class="modal-content">
             <button class="modal-close" onclick="closeModal('trial')" aria-label="Close">×</button>
             <h2 class="modal-title">Get Your App Built Free</h2>
-            <p class="modal-subtitle">Save $10k+ in development costs. We'll build your custom app for free, you test it for 60 days, then decide.</p>
+            <p class="modal-subtitle">Save $10k+ in development costs. We'll build your custom app for free, you test it for 30 days, then decide.</p>
             <form class="modal-form" onsubmit="handleSubmit(event, 'trial')">
                 <div class="form-row">
                 <div class="form-group">
@@ -611,26 +588,64 @@
     <!-- Modal: Demo -->
     <div id="demoModal" class="modal">
         <div class="modal-overlay" onclick="closeModal('demo')"></div>
-        <div class="modal-content modal-content--wide">
+        <div class="modal-content">
             <button class="modal-close" onclick="closeModal('demo')" aria-label="Close">×</button>
-            <h2 class="modal-title">Schedule a Demo</h2>
-            <p class="modal-subtitle">Pick a time that works. You'll get a calendar invite and reminders automatically.</p>
-            <div class="calendly-embed">
-                <div
-                    class="calendly-inline-widget"
-                    data-url="https://calendly.com/joe-kodabuild/30min?hide_event_type_details=1&primary_color=4a5899&text_color=0f172a&background_color=ffffff"
-                    data-resize="true"
-                    style="min-width:320px;height:700px;">
+            <h2 class="modal-title">Let’s Connect</h2>
+            <p class="modal-subtitle">Share a few details and we’ll reach out personally to map next steps.</p>
+            <form class="modal-form" onsubmit="handleSubmit(event, 'demo')">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Your Name</label>
+                        <input type="text" name="name" required placeholder="Jane Smith">
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" name="email" required placeholder="jane@company.com">
+                    </div>
                 </div>
-            </div>
-            <p class="modal-help">
-                Trouble loading the scheduler?
-                <a href="https://calendly.com/joe-kodabuild/30min" target="_blank" rel="noopener">Open it in a new tab</a>.
-            </p>
+                <div class="form-group">
+                    <label>Business Type</label>
+                    <input type="text" name="business_type" required placeholder="Cafe, salon, clinic, retail, etc.">
+                </div>
+                <div class="form-group">
+                    <label>Phone Number (Optional)</label>
+                    <input type="tel" name="phone" placeholder="(555) 123-4567">
+                </div>
+                <div class="form-group">
+                    <label>Current 3rd-Party Systems (Optional)</label>
+                    <details class="checkbox-details">
+                        <summary class="checkbox-summary">Select systems</summary>
+                        <div class="checkbox-grid">
+                        <label class="checkbox-item"><input type="checkbox" name="current_system[]" value="Square">Square</label>
+                        <label class="checkbox-item"><input type="checkbox" name="current_system[]" value="Toast">Toast</label>
+                        <label class="checkbox-item"><input type="checkbox" name="current_system[]" value="Clover">Clover</label>
+                        <label class="checkbox-item"><input type="checkbox" name="current_system[]" value="Shopify">Shopify</label>
+                        <label class="checkbox-item"><input type="checkbox" name="current_system[]" value="Lightspeed">Lightspeed</label>
+                        <label class="checkbox-item"><input type="checkbox" name="current_system[]" value="WooCommerce">WooCommerce</label>
+                        <label class="checkbox-item"><input type="checkbox" name="current_system[]" value="Mindbody">Mindbody</label>
+                        <label class="checkbox-item"><input type="checkbox" name="current_system[]" value="Vagaro">Vagaro</label>
+                        <label class="checkbox-item"><input type="checkbox" name="current_system[]" value="Fresha">Fresha</label>
+                        <label class="checkbox-item"><input type="checkbox" name="current_system[]" value="Booker">Booker</label>
+                        <label class="checkbox-item"><input type="checkbox" name="current_system[]" value="Calendly">Calendly</label>
+                        <label class="checkbox-item"><input type="checkbox" name="current_system[]" value="Acuity Scheduling">Acuity Scheduling</label>
+                        <label class="checkbox-item"><input type="checkbox" name="current_system[]" value="OpenTable">OpenTable</label>
+                        <label class="checkbox-item"><input type="checkbox" name="current_system[]" value="Resy">Resy</label>
+                        <label class="checkbox-item"><input type="checkbox" name="current_system[]" value="Square Appointments">Square Appointments</label>
+                        <label class="checkbox-item"><input type="checkbox" name="current_system[]" value="Google Business Profile">Google Business Profile</label>
+                        <label class="checkbox-item"><input type="checkbox" name="current_system[]" value="Custom / Other">Custom / Other</label>
+                        </div>
+                    </details>
+                </div>
+                <div class="form-group">
+                    <label>Project Details (Optional)</label>
+                    <textarea name="project_details" rows="3" placeholder="What are you hoping the app will do?"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">Submit</button>
+                <p class="form-note">We’ll follow up personally within 24 hours.</p>
+            </form>
         </div>
     </div>
 
-    <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
     <script src="script.js"></script>
 </body>
 </html>
