@@ -57,7 +57,7 @@ function toggleFAQ(button) {
 }
 
 // Form Submission Handler
-function handleSubmit(event, type) {
+async function handleSubmit(event, type) {
     event.preventDefault();
     
     const form = event.target;
@@ -68,30 +68,33 @@ function handleSubmit(event, type) {
         data[key] = value;
     });
     
-    // Log submission (in production, send to backend)
+    // Log submission
     console.log(`${type} submission:`, data);
+
+    // Send to form endpoint if configured
+    const hasAction = form.getAttribute('action');
+    if (hasAction) {
+        try {
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+            if (!response.ok) {
+                throw new Error('Form submission failed');
+            }
+        } catch (err) {
+            showNotification("Something went wrong. Please try again or email us directly.", { variant: 'error' });
+            return;
+        }
+    }
     
     // Show success notification
-    const message = type === 'trial' 
+    const message = type === 'trial'
         ? "🎉 Congrats—you're in! We’re excited to shape an amazing app with you."
         : "🎉 Congrats! We’re excited to shape an amazing app with you.";
-    
-    showNotification(message, 'success');
-    
-    // Reset form and close modal
-    form.reset();
-    closeModal(type);
-}
-
-// Notification System
-function showNotification(message, type = 'success') {
-    // Remove existing confirmation modals
-    const existing = document.querySelectorAll('.confirmation-modal');
-    existing.forEach(modal => modal.remove());
-
-    const modal = document.createElement('div');
-    modal.className = 'modal show confirmation-modal';
-    modal.style.display = 'flex';
     const nextSteps = type === 'trial'
         ? `
             <ul class="confirmation-steps">
@@ -108,15 +111,34 @@ function showNotification(message, type = 'success') {
             </ul>
         `;
 
+    showNotification(message, { variant: 'success', steps: nextSteps });
+    
+    // Reset form and close modal
+    form.reset();
+    closeModal(type);
+}
+
+// Notification System
+function showNotification(message, options = {}) {
+    const { variant = 'success', steps = '' } = options;
+    const isError = variant === 'error';
+
+    // Remove existing confirmation modals
+    const existing = document.querySelectorAll('.confirmation-modal');
+    existing.forEach(modal => modal.remove());
+
+    const modal = document.createElement('div');
+    modal.className = 'modal show confirmation-modal';
+    modal.style.display = 'flex';
     modal.innerHTML = `
         <div class="modal-overlay" data-confirm-close="true"></div>
         <div class="modal-content confirmation-content">
             <button class="modal-close" data-confirm-close="true" aria-label="Close">×</button>
-            <div class="confirmation-icon" aria-hidden="true">✓</div>
-            <h2 class="modal-title">You’re all set</h2>
+            <div class="confirmation-icon ${isError ? 'confirmation-icon--error' : ''}" aria-hidden="true">${isError ? '!' : '✓'}</div>
+            <h2 class="modal-title">${isError ? 'Something went wrong' : 'You’re all set'}</h2>
             <p class="modal-subtitle">${message}</p>
-            ${nextSteps}
-            <button class="btn btn-primary btn-full" data-confirm-close="true">Amazing!</button>
+            ${isError ? '' : steps}
+            <button class="btn btn-primary btn-full" data-confirm-close="true">${isError ? 'Close' : 'Amazing!'}</button>
         </div>
     `;
 
